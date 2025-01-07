@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Finance Flow</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Finance Flow</h1>
+        </header>
+
+        <section id="remaining">
+            <h3>Remaining Balance: <span id="remaining-amount">₹0.00</span></h3>
+        </section>
+
+        
+        <section id="income-expense">
+            <div class="income">
+                <h3>Income</h3>
+                <p id="income-amount">₹0.00</p>
+            </div>
+            <div class="expense">
+                <h3>Expense</h3>
+                <p id="expense-amount">₹0.00</p>
+            </div>
+        </section>
+
+
+        <section id="transaction-form">
+            <h3>Add New Transaction</h3>
+            <form onsubmit="addTransaction(event)">
+                <input type="text" id="transaction-name" placeholder="Transaction Name" required>
+                <input type="number" id="transaction-amount" placeholder="Amount" required>
+                <select id="transaction-type">
+                    <option value="income">Income</option>
+                    <option value="expense">Expense</option>
+                </select>
+                <input type="datetime-local" id="transaction-datetime" required>
+                <button type="submit">Add Transaction</button>
+            </form>
+            <input type="number" id="budget-goal" placeholder="Enter your budget goal" />
+            <button onclick="setBudgetGoal()">Set Budget</button>
+            <p id="budget-progress"></p>
+        </section>
+        <section id="search-expenses">
+            <input type="text" id="search-bar" placeholder="Search expenses" onkeyup="filterExpenses()" />
+        </section>
+
+        <section id="transactions">
+            <h3>Transactions</h3>
+            <ul id="transaction-list">
+                <!-- Transactions will be listed here -->
+            </ul>
+        </section>
+
+        <section id="spending-analysis">
+            <h3>Spending Analysis</h3>
+            <canvas id="spending-chart"></canvas> <!-- Pie chart canvas -->
+            <canvas id="expense-chart"></canvas> <!-- Extra chart canvas -->
+        </section>
+       
+        <!-- Copyright Notice -->
+        <footer>
+            <p>&copy; Finance Flow Developed by Krish.</p>
+        </footer>
+    </div>
+    </div>
+
+    <!-- Include Chart.js from CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="scripts.js"></script>
+</body>
+</html>

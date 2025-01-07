@@ -1,0 +1,241 @@
+/* Global Styles */
+body {
+    font-family: 'Lato', sans-serif; /* Clean, modern font */
+    background: linear-gradient(135deg, #e9ecef, #f0f2f5); /* Subtle gradient for depth */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* Full height for centering */
+}
+
+/* Container */
+.container {
+    background: #ffffff; /* Clean white background */
+    padding: 50px; /* Ample padding for spaciousness */
+    border-radius: 20px; /* Rounded corners for elegance */
+    width: 100%;
+    max-width: 800px; /* Wider container for more room */
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15); /* Deeper shadow for elegance */
+    transition: transform 0.3s, box-shadow 0.3s; /* Smooth scale and shadow effect on hover */
+}
+
+.container:hover {
+    transform: translateY(-8px); /* More noticeable lift effect */
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.2); /* Stronger shadow on hover */
+}
+
+/* Header */
+header {
+    text-align: center;
+    margin-bottom: 40px; /* Increased margin for better spacing */
+}
+
+h1 {
+    font-size: 2.5rem; /* Larger font for emphasis */
+    color: #343a40; /* Darker color for better readability */
+    margin: 0; /* Remove default margin */
+}
+
+/* Balance and Remaining */
+#balance, #remaining {
+    text-align: center;
+    margin-bottom: 40px; /* Increased margin for better spacing */
+    font-size: 2rem; /* Larger font for emphasis */
+    font-weight: bold; /* Bold for importance */
+    color: #343a40; /* Darker color for better readability */
+    padding: 15px 20px; /* Padding for a more substantial look */
+    border-radius: 12px; /* Rounded corners */
+    background-color: rgba(0, 123, 255, 0.1); /* Light blue background */
+}
+
+/* Income and Expense Section */
+#income-expense {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 40px; /* Increased margin for better spacing */
+}
+
+.income, .expense {
+    width: 48%; /* Adjusted width for a cleaner look */
+    padding: 25px; /* Increased padding */
+    border-radius: 15px; /* More rounded corners */
+    text-align: center;
+    transition: transform 0.3s, background-color 0.3s; /* Transition on hover */
+    position: relative; /* For pseudo-element */
+}
+
+.income {
+    background-color: #d4edda; /* Light green */
+    color: #155724; /* Dark green */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+.income:hover {
+    background-color: #c3e6cb; /* Darker green on hover */
+    transform: translateY(-3px); /* Lift effect on hover */
+}
+
+.expense {
+    background-color: #f8d7da; /* Light red */
+    color: #721c24; /* Dark red */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+.expense:hover {
+    background-color: #f5c6cb; /* Darker red on hover */
+    transform: translateY(-3px); /* Lift effect on hover */
+}
+
+/* Remaining Balance */
+#remaining {
+    background-color: #007bff; /* Premium blue */
+    color: #ffffff; /* Keeping it white for contrast */
+    padding: 15px; /* Increased padding */
+    border-radius: 12px; /* Slightly more rounded corners */
+    margin-bottom: 40px; /* Increased margin for better spacing */
+    font-size: 1.5rem; /* Increased font size */
+}
+
+/* Form Styles */
+form {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 40px; /* Increased margin for better spacing */
+}
+
+input, select, button {
+    margin: 10px 0;
+    padding: 15px; /* Increased padding for inputs */
+    border-radius: 10px; /* Rounded corners for inputs */
+    border: 1px solid #ced4da; /* Light border color */
+    font-size: 1rem;
+    transition: border-color 0.3s, box-shadow 0.3s; /* Transition on focus */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+input:focus, select:focus {
+    border-color: #007bff; /* Focus border color */
+    outline: none; /* Remove default outline */
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* Light blue glow on focus */
+}
+
+/* Button Styles */
+button {
+    background-color: #28a745; /* Green button */
+    color: white;
+    cursor: pointer;
+    border: none;
+    padding: 15px; /* More padding for buttons */
+    border-radius: 10px; /* Rounded corners */
+    transition: background-color 0.3s, transform 0.3s; /* Transition for button */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Button shadow */
+}
+
+button:hover {
+    background-color: #218838; /* Darker green on hover */
+    transform: translateY(-3px); /* Lift effect on hover */
+}
+
+/* List Styles */
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    background-color: #ffffff; /* Changed to white for contrast */
+    padding: 20px; /* Increased padding */
+    margin: 15px 0; /* More spacing between items */
+    border-radius: 12px; /* Rounded corners */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Subtle shadow for list items */
+    transition: transform 0.3s; /* Transition for list items */
+}
+
+li:hover {
+    transform: translateY(-2px); /* Lift effect on hover */
+}
+
+/* Income and Expense List Items */
+li.income {
+    border-left: 5px solid #17c33f; /* Green */
+}
+
+li.expense {
+    border-left: 5px solid #dc3545; /* Red */
+}
+
+/* Spending Analysis */
+#spending-analysis {
+    margin-top: 40px; /* Increased margin for better spacing */
+}
+
+/* Spending Chart */
+#spending-chart {
+    width: 100% !important;
+    height: 300px !important;
+    border-radius: 12px; /* Added rounded corners to the chart */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Added shadow for the chart */
+}
+
+/* Updated Button Styles */
+button:active {
+    transform: translateY(4px); /* Push down on click for a 3D effect */
+    box-shadow: 0 2px 0 #1e7e34; /* Shrinks shadow on click */
+}
+
+/* Container Shadow for 3D Effect */
+.container {
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15), 0 0 20px rgba(0, 0, 0, 0.05) inset; /* Inner and outer shadow */
+}
+
+/* 3D Effect on Hover */
+.container:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.2), 0 0 30px rgba(0, 0, 0, 0.1) inset; /* Inner glow effect */
+}
+
+/* List Items with Depth */
+li:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2); /* 3D lift effect */
+}
+
+.income, .expense {
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.income:hover, .expense:hover {
+    transform: translateY(-5px) rotateX(5deg) rotateY(-5deg); /* 3D tilt */
+}
+
+body.dark-mode {
+    background-color: #333;
+    color: #fff;
+}
+
+@media (max-width: 600px) {
+    .container {
+        flex-direction: column;
+    }
+}
+
+/* Footer Styling */
+footer {
+    text-align: center; /* Center-align the text */
+    margin-top: 20px; /* Add some space above the footer */
+    padding: 10px 0; /* Add padding to the top and bottom */
+    background-color: #28a745; /* Light background color */
+    border-top: 1px solid #e9ecef; /* Add a subtle border at the top */
+    font-size: 14px; /* Set the font size */
+    color: #ffffff; /* Set the text color to a muted gray */
+}
+
+footer p {
+    margin: 0; /* Remove default margin for the paragraph */
+}
