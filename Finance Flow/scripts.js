@@ -160,6 +160,14 @@ function searchTransactions() {
 
     transactionList.innerHTML = '';
     filteredTransactions.forEach(addTransactionToList);
+
+    const messageElement = document.getElementById('search-message');
+    if (filteredTransactions.length === 0) {
+        messageElement.innerText = "The transaction is not listed.";
+        messageElement.style.display = "block"; // Show the message
+
+    }
+
 }
 
 // Event listener for search bar
