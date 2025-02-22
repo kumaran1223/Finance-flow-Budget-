@@ -1,10 +1,11 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Finance Flow</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="container">
@@ -47,6 +48,8 @@
         </section>
         <section id="search-expenses">
             <input type="text" id="search-bar" placeholder="Search expenses" onkeyup="filterExpenses()" />
+            <p id="search-message" style="display: none; color: red;"></p>
+
         </section>
 
         <section id="transactions">
@@ -58,8 +61,8 @@
 
         <section id="spending-analysis">
             <h3>Spending Analysis</h3>
-            <canvas id="spending-chart"></canvas> <!-- Pie chart canvas -->
-            <canvas id="expense-chart"></canvas> <!-- Extra chart canvas -->
+            <canvas id="spending-chart"></canvas>
+            <canvas id="expense-chart"></canvas> 
         </section>
        
         <!-- Copyright Notice -->
