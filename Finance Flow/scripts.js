@@ -55,11 +55,10 @@ transactionForm.addEventListener("submit", (e) => {
 function addTransactionToList(transaction) {
     const listItem = document.createElement("li");
     listItem.classList.add(transaction.type);
-    listItem.innerHTML = `
-        ${transaction.name} - ${new Date(transaction.datetime).toLocaleString()} 
+    listItem.innerHTML = 
+        `${transaction.name} - ${new Date(transaction.datetime).toLocaleString()} 
         <span>${transaction.type === "income" ? "+" : "-"}₹${Math.abs(transaction.amount).toFixed(2)}</span>
-        <button class="delete-btn" onclick="removeTransaction(${transaction.id})">X</button>
-    `;
+        <button class="delete-btn" onclick="removeTransaction(${transaction.id})">X</button>`;
     transactionList.appendChild(listItem);
 }
 
@@ -128,7 +127,7 @@ function updateSpendingChart(income, expense) {
 // Set budget goal
 function setBudgetGoal() {
     const goal = parseFloat(budgetGoalInput.value);
-    if (!isNaN(goal)) {
+    if (!isNaN(goal) && goal > 0) {
         localStorage.setItem("budgetGoal", goal);
         updateBudgetProgress();
     }
@@ -136,7 +135,9 @@ function setBudgetGoal() {
 
 // Update budget progress
 function updateBudgetProgress() {
-    const goal = parseFloat(localStorage.getItem("budgetGoal")) || 0;
+    const goal = parseFloat(localStorage.getItem("budgetGoal"));
+    if (isNaN(goal) || goal <= 0) return; // Avoid running if no goal is set
+
     const totalExpenses = transactions.filter(t => t.type === "expense").reduce((acc, t) => acc + t.amount, 0);
     
     budgetProgress.textContent = `You've spent ₹${totalExpenses.toFixed(2)} of your ₹${goal.toFixed(2)} budget.`;
